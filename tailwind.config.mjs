@@ -7,6 +7,9 @@ export default {
         "sky-blue": "#E7FAFE",
         "light-gray": "rgb(0,0,0, 0.6)",
       },
+      boxShadow: {
+        button: "0 5px 30px -10px rgba(0, 0, 0, 0.3)",
+      },
     },
   },
   plugins: [],
