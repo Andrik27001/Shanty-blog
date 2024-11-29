@@ -1,3 +1,8 @@
+---
+import Header from "../components/Header.astro";
+import '@fontsource-variable/inter';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,12 +13,17 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<Header />
 		<slot />
 	</body>
 </html>
 
 <style>
 	html,
+
+	:root {
+		font-family: 'Inter Variable', sans-serif;
+	}
 	body {
 		margin: 0;
 		width: 100%;
