@@ -5,7 +5,8 @@ export default {
     extend: {
       colors: {
         "sky-blue": "#E7FAFE",
-        "light-gray": "rgb(0,0,0, 0.6)",
+        "light-gray": "rgb(0, 0, 0, 0.6)",
+        "extra-light-gray": "rgb(0, 0, 0, 0.1)",
       },
       boxShadow: {
         button: "0 5px 30px -10px rgba(0, 0, 0, 0.3)",
