@@ -1,4 +1,6 @@
 ---
+import CategoryCard from "./CategoryCard.astro";
+
 
 ---
 
@@ -6,5 +8,8 @@
   <div class="flex justify-between">
     <h2 class="text-[48px] font-semibold">Categories</h2>
     <button class="py-4 px-9 bg-sky-blue font-semibold rounded-2xl w-max">View All Categories</button>
+  </div>
+  <div>
+    <CategoryCard imageSrc="../../public/images/Onigiri.png" color="#708246">Breakfast</CategoryCard>
   </div>
 </section>
