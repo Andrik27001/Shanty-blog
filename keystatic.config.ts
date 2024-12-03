@@ -1,3 +1,4 @@
+// keystatic.config.ts
 import { config, fields, collection } from "@keystatic/core";
 
 export default config({
