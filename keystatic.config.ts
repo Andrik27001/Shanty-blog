@@ -29,11 +29,6 @@ export default config({
           directory: "/public/images/categories",
           publicPath: "/images/categories",
         }),
-        color: fields.text({
-          label: "Color",
-          description:
-            "This field will set the category color. You will need to write the color on hex code",
-        }),
         content: fields.markdoc({ label: "Content" }),
       },
     }),

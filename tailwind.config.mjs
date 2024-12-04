@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        "sky-blue": "#E7FAFE",
+        "brand": "rgb(255, 216, 232)",
         "light-gray": "rgb(0, 0, 0, 0.6)",
         "extra-light-gray": "rgb(0, 0, 0, 0.1)",
         "breakfast": "#708246",

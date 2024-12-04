@@ -4,29 +4,42 @@ import Clock from "./icons/Clock.astro";
 import KitchenTools from "./icons/Kitchen-tools.astro";
 import PlayButton from "./PlayButton.astro";
 import Tag from "./Tag.astro";
-
-
 ---
 
 <section class="flex w-[1280px] self-center m-10">
-    <img class="absolute left-1/2 transform -translate-x-1/2 translate-y-12" src="../../public/images/Badge.png" alt="Handpicked recipes">
-    <div class="flex flex-col bg-sky-blue w-2/4 rounded rounded-tl-[40px] rounded-bl-[40px] p-[50px]">
-      <Badge>Hot recipes</Badge>
-      <h1 class="text-[64px] font-semibold leading-[5rem] mt-8 mb-6">Spicy delicious chicken wings</h1>
-      <p class="text-light-gray mb-8">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
-      <div class="flex gap-4">
-        <Tag>
-          <Clock />
-          30 minutes
-        </Tag>
-        <Tag>
-          <KitchenTools />
-          Chicken
-        </Tag>
-      </div>
-      <PlayButton position="end"/>
+  <img
+    class="absolute left-1/2 transform -translate-x-1/2 translate-y-12"
+    src="/images/Badge.png"
+    alt="Handpicked recipes"
+  />
+  <div
+    class="flex flex-col bg-brand w-2/4 rounded rounded-tl-[40px] rounded-bl-[40px] p-[50px]"
+  >
+    <Badge>Hot recipes</Badge>
+    <h1 class="text-[64px] font-semibold leading-[5rem] mt-8 mb-6">
+      Delicious "Tres leches" cake
+    </h1>
+    <p class="text-light-gray mb-8">
+      Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqut enim ad minim
+    </p>
+    <div class="flex gap-4">
+      <Tag>
+        <Clock />
+        1 hour
+      </Tag>
+      <Tag>
+        <KitchenTools />
+        Cake
+      </Tag>
     </div>
-    <div class="w-2/4 rounded-tr-[40px] rounded-br-[40px] overflow-hidden">
-      <img src="../../public/images/baked-chicken.png" alt="Featured Image">
-    </div>
+    <PlayButton position="end" />
+  </div>
+  <div class="w-2/4 rounded-tr-[40px] rounded-br-[40px] overflow-hidden">
+    <img
+      src="/images/three-milks-cake.jpg"
+      alt="Featured Image"
+      class="size-[100%]"
+    />
+  </div>
 </section>

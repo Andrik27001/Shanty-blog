@@ -5,7 +5,6 @@ import CategoryCard from "./CategoryCard.astro";
 interface Category {
   name: string;
   image: string;
-  color: string;
   content: string;
 }
 
@@ -15,11 +14,11 @@ const categories = await getCollection("categories");
 <section class="w-[1280px] self-center mt-40 mb-[1000px]">
   <div class="flex justify-between mb-20">
     <h2 class="text-[48px] font-semibold">Categories</h2>
-    <button class="py-4 px-9 bg-sky-blue font-semibold rounded-2xl w-max"
+    <button class="py-4 px-9 bg-brand font-semibold rounded-2xl w-max"
       >View All Categories</button
     >
   </div>
-  <div class="flex gap-10">
+  <div class="flex justify-between gap-10">
     {
       categories.map((category: Category) => {
         return <CategoryCard {...category} />;

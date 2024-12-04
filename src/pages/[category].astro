@@ -1,0 +1,20 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import { date } from "astro:schema";
+
+export async function getStaticPaths() {
+  const categories = await getCollection("categories");
+
+  return categories.map((cat) => {
+    return {
+      params: { category: cat.slug },
+    };
+  });
+}
+
+const { category } = Astro.params;
+const { data } = await getEntry("categories", category);
+---
+
+<h1>Title: {data.name}</h1>
+<img src={data.image} alt="" />
