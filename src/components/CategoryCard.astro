@@ -6,7 +6,10 @@ const {
 
 <a href="#" class="transition hover:scale-105">
   <div
-    class=`px-12 py-6 flex flex-col items-center bg-gradient-to-t from-[${color}]/10 to-[${color}]/0 rounded-[30px]`
+    class:list={[
+      "px-12 py-6 flex flex-col items-center bg-gradient-to-t rounded-[30px]",
+      color ? `from-[${color}]/10 to-[${color}]/0` : "",
+    ]}
   >
     <img class="w-[100px] mb-10" src={image} alt="Category" />
     <h3 class="text-[18px] font-semibold">
