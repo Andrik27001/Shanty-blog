@@ -1,15 +1,62 @@
 ---
+import { getCollection } from "astro:content";
 import CategoryCard from "./CategoryCard.astro";
 
+const CATEGORIES = [
+  {
+    title: "Breakfast",
+    image: "../../public/images/onigiri.png",
+    background: "from-breakfast/10 to-breakfast/0",
+    link: "",
+  },
+  {
+    title: "Vegan",
+    image: "../../public/images/lettuce.png",
+    background: "from-vegan/10 to-vegan/0",
+    link: "",
+  },
+  {
+    title: "Meat",
+    image: "../../public/images/beef.png",
+    background: "from-meat/10 to-meat/0",
+    link: "",
+  },
+  {
+    title: "Dessert",
+    image: "../../public/images/cake.png",
+    background: "from-dessert/10 to-dessert/0",
+    link: "",
+  },
+  {
+    title: "Lunch",
+    image: "../../public/images/sandwich.png",
+    background: "from-lunch/10 to-lunch/0",
+    link: "",
+  },
+  {
+    title: "Chocolate",
+    image: "../../public/images/chocolate.png",
+    background: "from-chocolate/10 to-chocolate/0",
+    link: "",
+  },
+];
 
+const categories = await getCollection("categories");
+console.log(categories);
 ---
 
-<section class="w-[1280px] self-center mt-40">
-  <div class="flex justify-between">
+<section class="w-[1280px] self-center mt-40 mb-[1000px]">
+  <div class="flex justify-between mb-20">
     <h2 class="text-[48px] font-semibold">Categories</h2>
-    <button class="py-4 px-9 bg-sky-blue font-semibold rounded-2xl w-max">View All Categories</button>
+    <button class="py-4 px-9 bg-sky-blue font-semibold rounded-2xl w-max"
+      >View All Categories</button
+    >
   </div>
-  <div>
-    <CategoryCard imageSrc="../../public/images/Onigiri.png" color="#708246">Breakfast</CategoryCard>
+  <div class="flex gap-10">
+    {
+      categories.map((category) => {
+        return <CategoryCard {...category} />;
+      })
+    }
   </div>
 </section>
