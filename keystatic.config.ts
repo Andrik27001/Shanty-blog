@@ -13,11 +13,11 @@ export default config({
   collections: {
     categories: collection({
       label: "Categories",
-      slugField: "name",
+      slugField: "title",
       path: "src/content/categories/*/",
       format: { contentField: "content" },
       schema: {
-        name: fields.slug({
+        title: fields.slug({
           name: {
             label: "Name",
             description: "This field will set the category name",
@@ -30,6 +30,28 @@ export default config({
           publicPath: "/images/categories",
         }),
         content: fields.markdoc({ label: "Content" }),
+      },
+    }),
+    posts: collection({
+      label: "Posts",
+      slugField: "title",
+      path: "src/content/posts/*/",
+      schema: {
+        title: fields.slug({
+          name: {
+            label: "Title",
+          },
+        }),
+        categories: fields.array(
+          fields.relationship({
+            label: "Category",
+            collection: "categories",
+          }),
+          {
+            label: "Categories",
+            itemLabel: (item) => item.value || "N/A",
+          }
+        ),
       },
     }),
   },

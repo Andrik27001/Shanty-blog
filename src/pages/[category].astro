@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from "astro:content";
 import { date } from "astro:schema";
+import Layout from "../layouts/Layout.astro";
 
 export async function getStaticPaths() {
   const categories = await getCollection("categories");
@@ -16,5 +17,13 @@ const { category } = Astro.params;
 const { data } = await getEntry("categories", category);
 ---
 
-<h1>Title: {data.name}</h1>
-<img src={data.image} alt="" />
+<Layout>
+  <div>
+    <h1 class="h1">{data.name}</h1>
+    <p class="">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugiat
+      laborum distinctio, voluptatum ea eaque sed hic nemo quidem quisquam.
+    </p>
+  </div>
+  <img src={data.image} alt="" />
+</Layout>
