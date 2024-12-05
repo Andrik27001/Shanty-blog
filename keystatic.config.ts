@@ -26,7 +26,7 @@ export default config({
         image: fields.image({
           label: "Image",
           description: "This field will set the category image",
-          directory: "/public/images/categories",
+          directory: "/src/content/categories",
           publicPath: "/images/categories",
         }),
         content: fields.markdoc({ label: "Content" }),
@@ -52,6 +52,10 @@ export default config({
             itemLabel: (item) => item.value || "N/A",
           }
         ),
+        image: fields.image({
+          label: "Image",
+          directory: "/src/content/posts",
+        }),
       },
     }),
   },
