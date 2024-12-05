@@ -3,19 +3,14 @@ import { getCollection, getEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
 interface Category {
-  name: string;
-  image: string;
-  content: string;
   slug: string;
 }
 
 export async function getStaticPaths() {
   const categories = await getCollection("categories");
 
-  return categories.map((cat: Category) => {
-    return {
-      params: { category: cat.slug },
-    };
+  return categories.map((category: Category) => {
+    return { params: { category: category.slug } };
   });
 }
 
@@ -24,12 +19,11 @@ const { data } = await getEntry("categories", category);
 ---
 
 <Layout>
-  <div>
-    <h1 class="h1">{data.name}</h1>
-    <p class="">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugiat
-      laborum distinctio, voluptatum ea eaque sed hic nemo quidem quisquam.
-    </p>
-  </div>
-  <img src={data.image} alt="" />
+  <h1 class="h1">{data.title}</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+    accusantium! Excepturi eos recusandae cumque vitae quos cum deserunt optio
+    rem, alias, tempora totam. Nulla voluptatem necessitatibus optio, odit
+    beatae quod.
+  </p>
 </Layout>

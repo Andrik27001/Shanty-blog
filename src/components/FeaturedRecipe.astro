@@ -6,15 +6,15 @@ import PlayButton from "./PlayButton.astro";
 import Tag from "./Tag.astro";
 ---
 
-<section class="flex w-[1280px] self-center m-10">
+<section
+  class="flex max-w-[1280px] flex-col items-center self-center py-10 rounded-[50px]"
+>
   <img
     class="absolute left-1/2 transform -translate-x-1/2 translate-y-12"
     src="/images/badge.png"
     alt="Handpicked recipes"
   />
-  <div
-    class="flex flex-col bg-brand w-2/4 rounded rounded-tl-[40px] rounded-bl-[40px] p-[50px]"
-  >
+  <div class="flex flex-col bg-brand p-[50px] order-1">
     <Badge>Hot recipes</Badge>
     <h1 class="h1 mt-8 mb-6">Delicious "Tres leches" cake</h1>
     <p class="text-light-gray mb-8">
@@ -33,11 +33,11 @@ import Tag from "./Tag.astro";
     </div>
     <PlayButton position="end" />
   </div>
-  <div class="w-2/4 rounded-tr-[40px] rounded-br-[40px] overflow-hidden">
+  <div class="h-[200px] w-full aspect-auto">
     <img
       src="/images/three-milks-cake.jpg"
       alt="Featured Image"
-      class="size-[100%]"
+      class="size-[100%] w-full"
     />
   </div>
 </section>

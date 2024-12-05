@@ -27,7 +27,7 @@ export default config({
           label: "Image",
           description: "This field will set the category image",
           directory: "/src/content/categories",
-          publicPath: "/images/categories",
+          publicPath: "/src/content/categories",
         }),
         content: fields.markdoc({ label: "Content" }),
       },

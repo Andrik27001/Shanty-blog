@@ -1,7 +1,7 @@
 ---
 const {
   slug,
-  data: { name, image },
+  data: { title, image },
 } = Astro.props;
 ---
 
@@ -11,7 +11,7 @@ const {
   >
     <img class="w-[100px] mb-10" src={image} alt="Category" />
     <h3 class="text-[18px] font-semibold">
-      {name}
+      {title}
     </h3>
   </div>
 </a>

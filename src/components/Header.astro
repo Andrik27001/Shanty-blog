@@ -1,15 +1,31 @@
 ---
-
+import Menu from "./icons/Menu.astro";
 ---
 
 <header
-  class="px-20 py-10 flex justify-between border-b-2 border-black/10 border-solid"
+  class="px-4 py-4 flex justify-between items-center border-gray-100 border-b"
 >
-  <div class="w-[110px]">
-    <img src="/images/foodieland.png" alt="Logo" />
+  <a class="w-[110px]" href="#">
+    <img src="/public/images/foodieland.png" alt="Logo" />
+  </a>
+  <div class="md:hidden">
+    <button id="navBarTrigger" class="self-end">
+      <Menu />
+    </button>
+    <nav id="navBar" class="hidden absolute top-[57px] left-0 w-full bg-white">
+      <ul
+        class="flex flex-col flex-1 [&>li]:p-4 [&>li]:border-b [&>li]:border-gray-100 [&>li:hover]:bg-brand/100"
+      >
+        <li>Home</li>
+        <li>Recipes</li>
+        <li>Blog</li>
+        <li>Contact</li>
+        <li>About us</li>
+      </ul>
+    </nav>
   </div>
-  <nav>
-    <ul class="flex gap-14">
+  <nav class="hidden md:block">
+    <ul class="flex gap-4">
       <li>Home</li>
       <li>Recipes</li>
       <li>Blog</li>
@@ -18,7 +34,7 @@
     </ul>
   </nav>
 
-  <ul class="flex gap-10">
+  <ul class="hidden md:flex gap-10">
     <li>
       <img class="h-[22px]" src="/icons/facebook.png" alt="Facebook Logo" />
     </li>
@@ -30,3 +46,18 @@
     </li>
   </ul>
 </header>
+
+<style>
+  #navBar.active {
+    display: flex;
+  }
+</style>
+
+<script>
+  const navBarTrigger = document.querySelector("#navBarTrigger");
+  const navBar = document.querySelector("#navBar");
+
+  navBarTrigger?.addEventListener("click", () => {
+    navBar?.classList.toggle("active");
+  });
+</script>
