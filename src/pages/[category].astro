@@ -1,12 +1,18 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import { date } from "astro:schema";
 import Layout from "../layouts/Layout.astro";
+
+interface Category {
+  name: string;
+  image: string;
+  content: string;
+  slug: string;
+}
 
 export async function getStaticPaths() {
   const categories = await getCollection("categories");
 
-  return categories.map((cat) => {
+  return categories.map((cat: Category) => {
     return {
       params: { category: cat.slug },
     };
